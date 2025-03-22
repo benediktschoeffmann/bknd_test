@@ -1,0 +1,75 @@
+{
+  "server": {
+    "admin": {
+      "basepath": "",
+      "logo_return_path": "/"
+    },
+    "cors": {
+      "origin": "*",
+      "allow_methods": [
+        "GET",
+        "POST",
+        "PATCH",
+        "PUT",
+        "DELETE"
+      ],
+      "allow_headers": [
+        "Content-Type",
+        "Content-Length",
+        "Authorization",
+        "Accept"
+      ]
+    }
+  },
+  "data": {
+    "basepath": "/api/data",
+    "entities": {},
+    "relations": {},
+    "indices": {}
+  },
+  "auth": {
+    "enabled": false,
+    "basepath": "/api/auth",
+    "entity_name": "users",
+    "allow_register": true,
+    "jwt": {
+      "secret": "",
+      "alg": "HS256",
+      "fields": [
+        "id",
+        "email",
+        "role"
+      ]
+    },
+    "cookie": {
+      "path": "/",
+      "sameSite": "lax",
+      "secure": true,
+      "httpOnly": true,
+      "expires": 604800,
+      "renew": true,
+      "pathSuccess": "/",
+      "pathLoggedOut": "/"
+    },
+    "strategies": {
+      "password": {
+        "type": "password",
+        "enabled": true,
+        "config": {
+          "hashing": "sha256"
+        }
+      }
+    },
+    "roles": {}
+  },
+  "media": {
+    "enabled": false,
+    "basepath": "/api/media",
+    "entity_name": "media",
+    "storage": {}
+  },
+  "flows": {
+    "basepath": "/api/flows",
+    "flows": {}
+  }
+}
